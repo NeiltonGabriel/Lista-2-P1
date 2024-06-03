@@ -1,0 +1,46 @@
+/*
+Toda vez que Ambrósio vai calcular as raízes de uma equação do segundo grau, esquece de algum detalhe e calcula errado. Para evitar esquecimentos,
+resolveu fazer um programa que calcula as raízes da equação de segundo grau.
+
+Caso existam as raízes da equação, consiste de dois números reais formatados com duas casas decimais, representando as mesmas.
+Caso as raízes não existam, o sistema deve mostrar a mensagem (não existem raízes reais): NRR
+Caso não seja uma equação de segundo grau, o sistema deve mostrar a mensagem (não é uma equação do segundo grau): NEESG
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    // Coeficientes da equa??o ax? + bx + c = 0
+    double num1, num2, num3;
+    double solucao1, solucao2, delta;
+
+    scanf("%lf", &num1);
+    scanf("%lf", &num2);
+    scanf("%lf", &num3);
+
+    // Verifica se a ? zero (equa??o do primeiro grau)
+    if (num1 == 0) {
+        printf("NEESG\n");
+    } 
+    //calcula o delta
+    else {
+        delta = num2 * num2 - 4 * num1 * num3;
+        
+        //calcula as ra?zes
+        if (delta >= 0) {
+            solucao1 = (-num2 + sqrt(delta)) / (2 * num1);
+            solucao2 = (-num2 - sqrt(delta)) / (2 * num1);
+
+            printf("%.2lf\n", solucao1);
+            printf("%.2lf\n", solucao2);
+        } 
+        //n?o tem raiz real
+        else {
+            printf("NRR\n");
+        }
+    }
+
+    return 0;
+}
+
