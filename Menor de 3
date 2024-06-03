@@ -1,0 +1,29 @@
+/*
+Faça um programa que leia 3 números inteiros e imprima o menor deles.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
+int main(){
+
+    int num1, num2, num3;
+
+    scanf("%d %d %d", &num1, &num2, &num3);
+
+    //Olha se num1 ? o menor
+    if (num1 <= num2 && num1 <= num3){
+        printf("%d\n", num1);
+    }
+    //Olha se num2 ? o menor
+    else if (num2 <= num1 && num2 <= num3){
+        printf("%d\n", num2);
+    }
+    //Olha se num3 ? o menor
+    else if (num3 <= num1 && num3 <= num2){
+        printf("%d\n", num3);
+    }
+    return 0;
+}
