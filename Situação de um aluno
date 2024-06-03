@@ -1,0 +1,43 @@
+/*
+Você deve ajudar seu professor a descobrir qual a situação dos alunos de uma turma. Faça um programa que recebe como entrada 3 notas do usuário,
+calcula a média do aluno naquele semestre e, em seguida, informa a situação do aluno:
+
+"Aprovado", se a média estiver no intervalo [70; 100]
+"Reprovado", se a média estiver no intervalo [0; 40] 
+"Final", se a média estiver no intervalo (40; 70).
+"Média inválida" em qualquer outro caso.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
+int main(){
+
+    int nota1, nota2, nota3;
+    double media;
+
+    scanf("%d %d %d", &nota1, &nota2, &nota3);
+    
+    //calcula a m?dia das notas
+    media = (nota1 + nota2 + nota3) / 3.0;
+
+    //verifica se passou
+    if (media >= 70 && media <=100){
+        printf("A media do aluno foi %.2lf e ele foi APROVADO\n", media);
+    }
+    //verifica se foi reprovado
+    else if (media >= 0 && media <=40){
+        printf("A media do aluno foi %.2lf e ele foi REPROVADO\n", media);
+    }
+    //verifica se foi para a final
+    else if (media > 40 && media < 70){
+        printf("A media do aluno foi %.2lf e ele foi FINAL\n", media);
+    }
+    //tem problema nessa m?dia
+    else{
+        printf("Media invalida\n");
+    }
+    return 0;
+}
