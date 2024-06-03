@@ -1,0 +1,28 @@
+/*
+O valor normal de um ingresso em um determinado cinema é R$ 20,00. Entretanto, se o cliente é estudante ou idoso, o cinema cobra apenas meia-entrada.
+
+Faça um programa que leia um valor inteiro (0 ou 1) que indica se o cliente é estudante e outro valor inteiro (0 ou 1) que indica se o cliente é idoso. Com base nos valores lidos,
+o programa deve indicar, utilizando 0 ou 1, se este cliente paga entrada completa (falso - 0) ou meia-entrada (verdadeiro - 1).
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+	int idoso, estudante;
+
+	scanf("%d %d", &idoso, &estudante);
+	
+	//Olha se ? sofredor ou veio
+	if (idoso == 1 || estudante == 1){
+		printf("1\n");
+	}
+	else{
+		printf("0\n");
+	}
+
+	return 0;
+}
