@@ -1,0 +1,37 @@
+/*
+Faça um programa que leia a idade (valor inteiro) de uma pessoa e informe sua classe eleitoral:
+
+nao eleitor (abaixo de 16 anos)
+eleitor obrigatorio (maior e igual a 18 ou menor e igual a 65 anos)
+eleitor facultativo (entre 16 e 18 anos ou acima dos 65 anos)
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
+int main(){
+
+    int idade;
+
+    scanf("%d", &idade);
+
+    //V? se pode votar
+    if (idade < 16){
+        printf("nao eleitor\n");
+    }
+    else
+    //V? se deve ou n?o votar
+    {
+        //pode votar
+        if (idade >=16 && idade < 18 || idade > 65){
+            printf("eleitor facultativo\n");
+        }
+        //deve votar
+        else{
+            printf("eleitor obrigatorio\n");
+        }
+    }
+    return 0;
+}
