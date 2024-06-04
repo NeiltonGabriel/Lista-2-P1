@@ -1,0 +1,33 @@
+/*
+Escreva um programa que determine qual é o valor mensal da parcela do empréstimo que um banco pode autorizar.
+Para isso, o programa precisa do valor do salário e de quanto a renda mensal já está comprometida com outros empréstimos. Considere que o limite de comprometimento do salário é de 30%.
+O programa deve calcular e mostrar na tela qual o limite disponível da parcela mensal do novo empréstimo.
+Fique atento porque a renda mensal comprometida já pode exceder os 30% e neste caso o limite disponível da parcela mensal será zero.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
+int main (){
+
+    double salario, renda, porcento, disponivel;
+
+    scanf("%lf %lf", &salario, &renda);
+
+    //calcula os 30%
+    porcento = salario * 0.3;
+    
+    //Renda j? comprometida ? maior que os 30%
+    if (renda >= porcento){
+        disponivel = 0.00;
+        printf("%.2lf\n", disponivel);
+    }
+    // Renda ? menor que 30%
+    else{
+        disponivel = porcento - renda;
+        printf("%.2lf\n", disponivel);
+    }
+    return 0;
+}
