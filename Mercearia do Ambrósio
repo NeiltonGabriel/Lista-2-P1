@@ -1,0 +1,62 @@
+/*
+Ambrósio é amigo da vizinhança e resolveu dar descontos para agradar seus clientes. A mercearia de Ambrósio contém apenas 04 itens, cujos preços são dados pela tabela abaixo:
+
+
+Código      Preço
+  1          5,30
+  2          6,00
+  3          3,20
+  3          2,50
+
+
+
+A regra de desconto é bem simples: se a quantidade de produtos comprados for igual ou maior que quinze, então o desconto é concedido. O desconto também é concedido caso o valor total da compra seja maior ou igual a 40 reais.
+O valor do desconto é de 15%.
+Sua missão é fazer um programa que leia o código do produto, a quantidade comprada e imprima o valor que o cliente deve pagar, já considerando o desconto quando aplicável.
+Considere que o cliente só pode comprar um único tipo produto cada vez que usar o seu software.
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+	
+	double produto, quantidade, preco, desconto;
+
+	scanf("%lf %lf", &produto, &quantidade);
+
+	//calcula o pre?o
+	if (produto == 1){
+		preco = 5.30 * quantidade;
+	}
+	if (produto == 2){
+		preco = 6.00 * quantidade;
+	}
+	if (produto == 3){
+		preco = 3.20 * quantidade;
+	}
+	if (produto == 4){
+		preco = 2.50 * quantidade;
+	}
+
+	//desconto pela quantidade
+	if (quantidade >=15){
+		desconto = preco * 0.85;
+		printf("R$ %.2lf\n", desconto);
+	}
+
+	//desconto pelo pre?o
+	else if (preco >= 40){
+		desconto = preco * 0.85;
+		printf("R$ %.2lf\n", desconto);
+	}
+	
+	//sem desconto
+	else if (quantidade < 15 && preco < 40){
+		printf("R$ %.2lf\n", preco);
+	}
+	
+	return 0;
+}
