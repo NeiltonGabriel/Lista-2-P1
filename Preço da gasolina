@@ -1,0 +1,71 @@
+/*
+Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+Álcool:
+até 20 litros, desconto de 3% por litro
+acima de 20 litros, desconto de 5% por litro
+Gasolina:
+até 20 litros, desconto de 4% por litro
+acima de 20 litros, desconto de 6% por litro
+Diesel:
+até 25 litros, não existe desconto
+acima de 25 litros, desconto de 4% por litro
+Implemente um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina e D-Diesel),
+calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 2,50, o preço do litro do álcool é R$ 1,90 e o preço do litro de Diesel é R$ 1,66.
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+	
+	double litros, desconto, al, ga, di;
+	char combustivel;
+
+	scanf("%lf %c", &litros, &combustivel);
+
+ 
+    //alcool
+    if (combustivel == 'A'){
+      
+        al = 1.90; // define o pre?o do alcool
+        if (litros <= 20){
+            desconto = (al * 0.97) * litros;
+            printf("R$ %.2lf", desconto);
+        }
+        else if (litros > 20){
+            desconto = (al * 0.95) * litros;
+            printf("R$ %.2lf", desconto);
+        }
+        
+    }
+
+    //gasolina
+    if (combustivel == 'G'){
+        
+        ga = 2.50; //define pre?o gasolina
+        if (litros <= 20){
+            desconto = (ga * 0.96) * litros;
+            printf("R$ %.2lf", desconto);
+        }
+        else if (litros > 20){
+            desconto = (ga * 0.94) * litros;
+            printf("R$ %.2lf", desconto);
+        }
+    }
+    //diesel
+    if (combustivel == 'D'){
+        
+        di = 1.66; // define pre?o diesel
+        if (litros <= 25){
+            desconto = litros * di;
+            printf("R$ %.2lf", desconto);
+        }
+        else if (litros > 25){
+            desconto = (di * 0.96) * litros;
+            printf("R$ %.2lf", desconto);
+        }
+    }
+	return 0;
+}
