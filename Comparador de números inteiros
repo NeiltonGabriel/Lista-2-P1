@@ -1,0 +1,77 @@
+/*
+Faça um programa que leia dois valores inteiros (x e y) e imprima na tela o resultado das seguintes comparações entre estes dois valores, exatamente nesta ordem:
+
+x é maior que y
+
+x é igual a y
+
+x é menor que y
+
+x é diferente de y
+
+x é maior ou igual a y
+
+x é menor ou igual a y
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+	int num1, num2;
+
+	scanf("%d %d", &num1, &num2);
+
+	//? maior?
+	if (num1 > num2){
+		printf("1\n");
+	}
+	else {
+		printf("0\n");
+	}
+
+	//S?o iguais?
+	if (num1 == num2){
+		printf("1\n");
+	}
+	else{
+		printf("0\n");
+	}
+
+	//? menor?
+	if (num1 < num2){
+		printf("1\n");
+	}
+	else {
+		printf("0\n");
+	}
+
+	//Diferente?
+	if (num1 != num2){
+		printf("1\n");
+	}
+	else{
+		printf("0\n");
+	}
+
+	//maior igual?
+	if (num1 >= num2){
+		printf("1\n");
+	}
+	else{
+		printf("0\n");
+	}
+
+	//menor igual?
+	if (num1 <= num2){
+		printf("1\n");
+	}
+	else{
+		printf("0\n");
+	}
+	
+	return 0;
+}
